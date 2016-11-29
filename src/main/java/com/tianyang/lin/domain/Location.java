@@ -18,7 +18,7 @@ public class Location {
     enum GpsStatus {
         EXCELLENT, OK, UNRELIABLE, BAD, NOFIX, UNKNOWN;
     }
-    enum VehicleMovementType {
+    public enum VehicleMovementType {
         STOPPED, IN_MOTION;
 
         public boolean isMoving() {
@@ -31,7 +31,7 @@ public class Location {
     private long id;
     @Embedded
     @AttributeOverride(name = "engineMake", column = @Column(name = "unit_engine_make"))
-    private UnitInfo unitInfo;
+    private final UnitInfo unitInfo;
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "fmi", column = @Column(name = "unit_fmi")),
